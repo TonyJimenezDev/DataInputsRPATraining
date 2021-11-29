@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9905E6DE-4173-4887-A8DE-59D7B02D872E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DataInputsRPATraining</RootNamespace>
+    <AssemblyName>DataInputsRPATraining</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\MainLaunchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainLaunchForm.Designer.cs">
+      <DependentUpon>MainLaunchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\ChinaInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\ChinaInventory.Designer.cs">
+      <DependentUpon>ChinaInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputData.cs" />
+    <Compile Include="Inventory\JapanInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\JapanInventory.Designer.cs">
+      <DependentUpon>JapanInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginFormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginFormMain.Designer.cs">
+      <DependentUpon>LoginFormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CountryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CountryForm.Designer.cs">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Inventory\USAInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\USAInventory.Designer.cs">
+      <DependentUpon>USAInventory.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\MainLaunchForm.resx">
+      <DependentUpon>MainLaunchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\ChinaInventory.resx">
+      <DependentUpon>ChinaInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\JapanInventory.resx">
+      <DependentUpon>JapanInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginFormMain.resx">
+      <DependentUpon>LoginFormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CountryForm.resx">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Inventory\USAInventory.resx">
+      <DependentUpon>USAInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
